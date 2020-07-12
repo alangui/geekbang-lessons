@@ -41,9 +41,9 @@ public class DependencyLookupDemo {
         // 按照类型查找
         lookupByType(beanFactory);
         // 按照类型查找结合对象
-        lookupCollectionByType(beanFactory);
+//        lookupCollectionByType(beanFactory);
         // 通过注解查找对象
-        lookupByAnnotationType(beanFactory);
+//        lookupByAnnotationType(beanFactory);
 
 //        lookupInRealTime(beanFactory);
 //        lookupInLazy(beanFactory);

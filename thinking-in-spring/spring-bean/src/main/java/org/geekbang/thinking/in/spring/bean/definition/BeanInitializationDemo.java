@@ -29,7 +29,7 @@ import org.springframework.context.annotation.Lazy;
  * @author <a href="mailto:mercyblitz@gmail.com">Mercy</a>
  * @since
  */
-@Configuration // Configuration Class
+//@Configuration // Configuration Class
 public class BeanInitializationDemo {
 
     public static void main(String[] args) {
@@ -51,7 +51,6 @@ public class BeanInitializationDemo {
     }
 
     @Bean(initMethod = "initUserFactory", destroyMethod = "doDestroy")
-    @Lazy(value = false)
     public UserFactory userFactory() {
         return new DefaultUserFactory();
     }

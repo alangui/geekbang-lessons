@@ -30,6 +30,10 @@ import javax.annotation.PreDestroy;
  */
 public class DefaultUserFactory implements UserFactory, InitializingBean, DisposableBean {
 
+    public DefaultUserFactory(){
+        System.out.println("defaultUserFactory 实例化。。。");
+    }
+
     // 1. 基于 @PostConstruct 注解
     @PostConstruct
     public void init() {

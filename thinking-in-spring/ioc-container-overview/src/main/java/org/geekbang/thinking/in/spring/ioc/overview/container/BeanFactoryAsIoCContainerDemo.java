@@ -23,6 +23,7 @@ import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 
 import java.util.Map;
+import java.util.Set;
 
 /**
  * {@link BeanFactory} 作为 IoC 容器示例
@@ -49,7 +50,10 @@ public class BeanFactoryAsIoCContainerDemo {
         if (beanFactory instanceof ListableBeanFactory) {
             ListableBeanFactory listableBeanFactory = (ListableBeanFactory) beanFactory;
             Map<String, User> users = listableBeanFactory.getBeansOfType(User.class);
-            System.out.println("查找到的所有的 User 集合对象：" + users);
+            for(Map.Entry<String, User> entrySet : users.entrySet()){
+                System.out.println(entrySet.getKey());
+                System.out.println(entrySet.getValue());
+            }
         }
     }
 
