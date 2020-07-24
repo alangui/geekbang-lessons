@@ -36,6 +36,7 @@ public class SingletonBeanRegistrationDemo {
         // 创建一个外部 UserFactory 对象
         UserFactory userFactory = new DefaultUserFactory();
         SingletonBeanRegistry singletonBeanRegistry = applicationContext.getBeanFactory();
+        System.out.println(singletonBeanRegistry);
         // 注册外部单例对象
         singletonBeanRegistry.registerSingleton("userFactory", userFactory);
         // 启动 Spring 应用上下文

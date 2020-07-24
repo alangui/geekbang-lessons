@@ -40,9 +40,10 @@ import java.util.Set;
 @Configuration
 public class LazyAnnotationDependencyInjectionDemo {
 
+    // 实时注入
     @Autowired
     @Qualifier("user")
-    private User user; // 实时注入
+    private User user;
 
     @Autowired
     private ObjectProvider<User> userObjectProvider; // 延迟注入
@@ -72,7 +73,8 @@ public class LazyAnnotationDependencyInjectionDemo {
         // 期待输出 superUser Bean
         System.out.println("demo.user = " + demo.user);
         // 期待输出 superUser Bean
-        System.out.println("demo.userObjectProvider = " + demo.userObjectProvider.getObject()); // 继承 ObjectFactory
+        // 继承 ObjectFactory
+        System.out.println("demo.userObjectProvider = " + demo.userObjectProvider.getObject());
         // 期待输出 superUser user Beans
         System.out.println("demo.usersObjectFactory = " + demo.usersObjectFactory.getObject());
 

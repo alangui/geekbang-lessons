@@ -66,11 +66,4 @@ public class ApiDependencyConstructorInjectionDemo {
         definitionBuilder.addConstructorArgReference("superUser");
         return definitionBuilder.getBeanDefinition();
     }
-
-//    @Bean
-//    public UserHolder userHolder(User user) { // superUser -> primary = true
-//        UserHolder userHolder = new UserHolder();
-//        userHolder.setUser(user);
-//        return userHolder;
-//    }
 }

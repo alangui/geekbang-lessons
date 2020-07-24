@@ -39,12 +39,12 @@ public class HierarchicalDependencyLookupDemo {
 
         // 1. 获取 HierarchicalBeanFactory <- ConfigurableBeanFactory <- ConfigurableListableBeanFactory
         ConfigurableListableBeanFactory beanFactory = applicationContext.getBeanFactory();
-//        System.out.println("当前 BeanFactory 的 Parent BeanFactory ： " + beanFactory.getParentBeanFactory());
+        System.out.println("当前 BeanFactory 的 Parent BeanFactory ： " + beanFactory.getParentBeanFactory());
 
         // 2. 设置 Parent BeanFactory
         HierarchicalBeanFactory parentBeanFactory = createParentBeanFactory();
         beanFactory.setParentBeanFactory(parentBeanFactory);
-//        System.out.println("当前 BeanFactory 的 Parent BeanFactory ： " + beanFactory.getParentBeanFactory());
+        System.out.println("当前 BeanFactory 的 Parent BeanFactory ： " + beanFactory.getParentBeanFactory());
 
         displayContainsLocalBean(beanFactory, "user");
         displayContainsLocalBean(parentBeanFactory, "user");

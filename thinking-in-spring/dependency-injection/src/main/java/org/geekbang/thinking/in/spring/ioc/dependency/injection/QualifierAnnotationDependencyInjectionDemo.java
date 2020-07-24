@@ -61,14 +61,16 @@ public class QualifierAnnotationDependencyInjectionDemo {
     @UserGroup
     private Collection<User> groupedUsers; // 2 Beans = user3 + user4
 
+    // 进行逻辑分组
     @Bean
-    @Qualifier // 进行逻辑分组
-    public User user1() {
+    @Qualifier
+    public static User user1() {
         return createUser(7L);
     }
 
+    // 进行逻辑分组
     @Bean
-    @Qualifier // 进行逻辑分组
+    @Qualifier
     public static User user2() {
         return createUser(8L);
 
@@ -116,6 +118,7 @@ public class QualifierAnnotationDependencyInjectionDemo {
         // 期待输出 user Bean
         System.out.println("demo.namedUser = " + demo.namedUser);
         // 期待输出 superUser user user1 user2
+        System.out.println("demo.allUsers.size:" + demo.allUsers.size());
         System.out.println("demo.allUsers = " + demo.allUsers);
         // 期待输出 user1 user2
         System.out.println("demo.qualifiedUsers = " + demo.qualifiedUsers);

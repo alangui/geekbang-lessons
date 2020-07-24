@@ -46,7 +46,8 @@ import static org.springframework.context.annotation.AnnotationConfigUtils.AUTOW
 @Configuration
 public class AnnotationDependencyInjectionResolutionDemo {
 
-    @Autowired          // 依赖查找（处理） + 延迟
+    // 依赖查找（处理） + 延迟
+    @Autowired
     @Lazy
     private User lazyUser;
 
@@ -56,10 +57,12 @@ public class AnnotationDependencyInjectionResolutionDemo {
     // 通过类型（User.class）
     // 字段名称（"user"）
     // 是否首要（primary = true)
-    @Autowired          // 依赖查找（处理）
+    // 依赖查找（处理）
+    @Autowired
     private User user;
 
-    @Autowired          // 集合类型依赖注入
+    // 集合类型依赖注入
+    @Autowired
     private Map<String, User> users; // user superUser
 
     @MyAutowired
@@ -119,7 +122,6 @@ public class AnnotationDependencyInjectionResolutionDemo {
         System.out.println("demo.userOptional = " + demo.userOptional);
         // 期待输出 superUser Bean
         System.out.println("demo.myInjectedUser = " + demo.myInjectedUser);
-
 
         // 显示地关闭 Spring 应用上下文
         applicationContext.close();
